@@ -1,143 +1,104 @@
 ---
-title: Astro Vitesse
-display: 'Give your pages an elegant touch with Astro Vitesse'
-description: 'Give your pages an elegant touch with Astro Vitesse'
-tocAlwaysOn: true
+title: 'Whatsappier | Documentation, Guides & Blog'
+display: 'Your Hub for WhatsApp Automation'
+description: 'Explore comprehensive documentation, step-by-step guides, and expert articles to master WhatsApp automation and grow your business with Whatsappier.'
+tocAlwaysOn: false
 ---
-
 import Card from '@/components/Card.astro'
-import SponsorButton from '@/components/SponsorButton.astro'
-import LinkWithIcon from '@/components/LinkWithIcon.astro'
+import CardGrid from '@/components/CardGrid.astro'
+import Aside from '@/components/Aside.astro'
 
 [[toc]]
 
-Everything you need to create a stunning website. Fast, affordable and easy to use.
+Welcome to the official resource center for Whatsappier. Whether you're a new user looking to set up your first workflow or a seasoned pro seeking advanced strategies, you'll find everything you need right here.
 
-It's inspired by  <LinkWithIcon href="https://antfu.me" iconUrl="https://antfu.me/favicon.svg">antfu.me</LinkWithIcon> <br />
-Developed with <LinkWithIcon href="https://astro.build" iconUrl="https://github.com/withastro.png">Astro</LinkWithIcon> <br />
-Based on <LinkWithIcon href="https://starlight.astro.build" iconUrl="https://starlight.astro.build/favicon.svg">Starlight</LinkWithIcon>
+<CardGrid>
+  <Card>
+    ### Documentation
+    
+    Dive deep into our comprehensive guides, tutorials, and technical references. Learn how to connect your devices, build complex workflows, and unlock the full potential of our platform.
+    
+    <div class="mt-4">
+      <a href="/docs" class="btn-rose">
+        Explore the Docs
+      </a>
+    </div>
+  </Card>
+  
+  <Card>
+    ### The Blog
+    
+    Discover strategies to grow your business, read inspiring case studies, and stay ahead with the latest trends in e-commerce and WhatsApp automation.
+    
+    <div class="mt-4">
+      <a href="/blog" class="btn-rose">
+        Read the Blog
+      </a>
+    </div>
+  </Card>
+</CardGrid>
 
-<div class="class flex flex-col space-y-4">
+## Latest from the Blog
+Stay informed with our newest articles and tutorials.
 
-<Card>
+<CardGrid>
+  <Card>
+    #### 5 Strategies to Recover Abandoned Carts with WhatsApp
+    Turn lost opportunities into revenue. Learn the proven tactics for timing, personalization, and incentives to win back customers who abandon their carts.
+    <div class="mt-4">
+      <a href="/blog/5-strategies-abandoned-cart-recovery">Read More →</a>
+    </div>
+  </Card>
+  <Card>
+    #### Beyond the Email: Why Your Store Needs WhatsApp Order Updates
+    Elevate your post-purchase experience and build lasting customer loyalty. See how instant WhatsApp notifications can reduce support tickets and delight your customers.
+    <div class="mt-4">
+      <a href="/blog/beyond-the-confirmation-email">Read More →</a>
+    </div>
+  </Card>
+</CardGrid>
 
-Includes: Site navigation, internationalization, SEO, easy-to-read typography, code highlighting, dark mode and more.
+## Getting Started Guides
+New to Whatsappier? These guides will take you from zero to automated in no time.
 
-</Card>
+<CardGrid>
+  <Card>
+    #### 1. Connecting Your WhatsApp Device
+    The essential first step. This guide covers how to securely link your WhatsApp account to the platform in under five minutes.
+    <div class="mt-4">
+      <a href="/docs/1.connecting-your-device">Read Guide →</a>
+    </div>
+  </Card>
+  <Card>
+    #### 2. Creating Dynamic Message Templates
+    Learn to craft personalized messages using dynamic variables like `{{customer_name}}` and `{{order_number}}` for a truly personal touch.
+    <div class="mt-4">
+      <a href="/docs/2.creating-message-templates">Read Guide →</a>
+    </div>
+  </Card>
+  <Card>
+    #### 3. Building Your First Automation
+    Bring it all together. Follow our step-by-step tutorial to create a powerful automated order confirmation workflow for your store.
+    <div class="mt-4">
+      <a href="/docs/3.building-your-first-automation">Read Guide →</a>
+    </div>
+  </Card>
+</CardGrid>
 
-<Card>
-
-Bring your favorite markup language. Astro Vitesse gives you built-in frontmatter validation with TypeScript type-safety.
-
-</Card>
-
-<Card>
-
-Astro Vitesse ships as a framework-agnostic, complete solution. Extend with React, Vue, Svelte, Solid, and more.
-
-</Card>
-
-</div>
-
-## Set up Astro Vitesse
-
-To follow this guide, you’ll need an existing Astro project.
-
-### Add the Astro Vitesse integration
-
-Astro Vitesse is an [Astro integration](https://docs.astro.build/en/guides/integrations-guide/). Add it to your site by running the `astro add` command in your project’s root directory:
-
-```sh
-npx astro add astro-vitesse
-```
-
-This will install the required dependencies and add Astro Vitesse to the `integrations` array in your Astro config file.
-
-### Configure the integration
-
-The Astro Vitesse integration is configured in your `astro.config.mjs` file.
-
-Add a `title` to get started:
-
-```js
-import { defineConfig } from 'astro'
-import vitesse from 'astro-vitesse'
-
-export default defineConfig({
-  integrations: [
-    vitesse({
-      title: 'My Site',
-    })
-  ]
-})
-```
-
-### Configure UnoCSS
-
-Astro Vitesse uses [UnoCSS](https://unocss.dev/) for styling. To configure UnoCSS, create a `unocss.config.ts` file in your project’s root directory:
-
-```ts
-import { defineConfig } from 'astro-vitesse/theme'
-
-export default defineConfig({})
-```
-
-### Configure content collections
-
-Astro Vitesse is built on top of Astro’s [content collections](https://docs.astro.build/en/guides/content-collections/), which are configured in the `src/content.config.ts` file.
-
-Create or update the content config file, adding a `pages` collection that uses Astro Vitesse’s `pagesSchema`:
-
-```ts
-import { defineCollection } from 'astro:content'
-import { pagesSchema } from 'astro-vitesse/schema'
-import { pagesLoader } from 'astro-vitesse/loaders'
-
-export const collections = {
-  pages: defineCollection({ loader: pagesLoader(), schema: pagesSchema() }),
-}
-```
-
-### Add content
-
-Astro Vitesse is now configured and it’s time to add some content!
-
-Create a `src/content/pages/` directory and start by adding an `index.md` file.
-This will be the homepage of your new site:
-
-```mdx
----
-title: Welcome to Astro Vitesse
-description: 'Give your pages an elegant touch with Astro Vitesse'
----
-
-Welcome to my website!
-```
-
-Astro Vitesse uses file-based routing, which means every Markdown, MDX, or Markdoc file in `src/content/pages/` will turn into a page on your site. Frontmatter metadata (the `title` and `description` fields in the example above) can change how each page is displayed.
-
-## Start the development server
-
-When working locally, [Astro’s development server](https://docs.astro.build/en/reference/cli-reference/#astro-dev) lets you preview your work and automatically refreshes your browser when you make changes.
-
-Inside your project directory, run the following command to start the development server:
-
-```sh
-npm run dev
-```
-
-<div class="flex-auto"></div>
+<Aside type="tip" title="Ready to Transform Your Customer Communication?">
+  You've seen what's possible. Put these guides and strategies into action and see the results for yourself. Connect your store, build your first automation, and start growing your business today.
+  <div class="mt-4">
+    <a href="https://your-main-app-url.com/register" class="btn-rose">
+      Start Automating Now
+    </a>
+  </div>
+</Aside>
 
 ---
 
-Find me on
+Connect with us
 
 <p flex="~ gap-2 wrap" class="mt--2!">
-  <a href="https://github.com/adrian-ub" target="_blank"><span op75 class="i-simple-icons-github" /> GitHub</a>
-  <a href="https://elk.zone/mastodon.social/@adrianub" target="_blank"><span op75 class="i-ri-mastodon-fill" /> Mastodon</a>
-  <a href="https://www.twitter.com/AdrianUB" target="_blank"><span op75 class="i-ri-twitter-x-fill" /> Twitter</a>
+  <a href="https://github.com/your-repo/whatsappier" target="_blank"><span op75 class="i-simple-icons-github" /> GitHub</a>
+  <a href="https://twitter.com/your-handle" target="_blank"><span op75 class="i-ri-twitter-x-fill" /> Twitter</a>
 </p>
-
----
-
-<SponsorButton />

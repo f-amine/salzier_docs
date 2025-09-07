@@ -1,0 +1,45 @@
+---
+interface Props {
+  type?: 'note' | 'tip' | 'caution'
+  title?: string
+}
+
+const { type = 'note', title } = Astro.props
+
+const styles = {
+  note: {
+    border: 'border-blue-500/50',
+    iconContainer: 'bg-blue-500/10 text-blue-500',
+    icon: 'i-ph-info-duotone',
+    title: 'text-blue-700 dark:text-blue-300',
+  },
+  tip: {
+    border: 'border-emerald-500/50',
+    iconContainer: 'bg-emerald-500/10 text-emerald-500',
+    icon: 'i-ph-lightbulb-duotone',
+    title: 'text-emerald-700 dark:text-emerald-300',
+  },
+  caution: {
+    border: 'border-amber-500/50',
+    iconContainer: 'bg-amber-500/10 text-amber-500',
+    icon: 'i-ph-warning-duotone',
+    title: 'text-amber-700 dark:text-amber-300',
+  },
+}
+
+const currentStyle = styles[type]
+---
+
+<div class:list={['not-prose my-6 rounded-md border-l-4 p-4 bg-base shadow-sm', currentStyle.border]}>
+  <div class="flex items-start gap-3">
+    <div class:list={['flex-shrink-0 rounded-full p-2', currentStyle.iconContainer]}>
+      <div class:list={['h-5 w-5', currentStyle.icon]}></div>
+    </div>
+    <div class="flex-1">
+      {title && <h5 class:list={['mb-1 text-lg font-semibold', currentStyle.title]}>{title}</h5>}
+      <div class="prose prose-sm dark:prose-invert max-w-none text-sm opacity-90">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

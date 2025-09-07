@@ -1,0 +1,42 @@
+/* Custom styles for step-by-step guides */
+.steps ol {
+  list-style-type: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.steps li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--c-bg-mute);
+  color: var(--c-text);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-border);
+  font-size: 0.9rem;
+}
+
+.dark .steps li::before {
+  background-color: #27272a;
+  border-color: #3f3f46;
+}
+
+.steps h3,
+.steps h4 {
+  margin-top: 0 !important;
+  padding-top: 0.25rem;
+}

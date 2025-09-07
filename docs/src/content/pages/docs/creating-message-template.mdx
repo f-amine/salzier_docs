@@ -1,0 +1,57 @@
+---
+title: 'Creating Dynamic Message Templates | Whatsappier Docs'
+description: 'Master message templates in Whatsappier. Learn how to use dynamic variables like {{customer_name}} to create personalized WhatsApp messages for your automations.'
+---
+import Aside from '@/components/Aside.astro'
+import Card from '@/components/Card.astro'
+
+[[toc]]
+
+Templates are the heart of your automated messages. They allow you to craft personalized, reusable messages that can be triggered by your automations. Using dynamic variables, you can insert customer and order information directly into your messages for a personal touch.
+
+<div class="steps">
+### Navigate to Templates
+From the dashboard, go to **"Templates"** in the sidebar.
+
+### Create a New Template
+Click the **"New Template"** button.
+
+### Select Automation Type
+Choose the type of automation this template will be used for (e.g., "Lightfunnels Order Confirmation"). This determines which variables will be available.
+
+### Write Your Message
+Give your template a clear name and craft your message in the content editor.
+</div>
+
+## Using Dynamic Variables
+
+Variables are placeholders that will be automatically replaced with real data when the automation runs. They are wrapped in double curly braces, like `{{customer_name}}`.
+
+<Aside type="tip" title="Use the 'Insert Variable' Dropdown">
+You don't have to remember every variable. Simply use the **"Insert Variable"** dropdown in the editor to see all available placeholders for your selected automation type and insert them with a single click.
+</Aside>
+
+### Example Template
+Here is an example of a great order confirmation message:
+
+```
+Hello {{customer_name}}! 👋
+
+Thank you for your order! We've successfully received your payment for order #{{order_number}}.
+
+Total Amount: {{total_amount}}
+
+We'll notify you again once your items have shipped.
+```
+
+## Previewing Your Template
+Use the **"Preview"** tab to see how your message will look with sample data. You can edit the sample data on the right-hand side to test different scenarios and ensure your message looks perfect every time.
+
+---
+
+<Card>
+### Next Steps
+With a device connected and a template created, you're ready to build your first workflow!
+
+[➡️ **Building Your First Automation**](./3.building-your-first-automation)
+</Card>
