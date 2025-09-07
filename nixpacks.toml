@@ -1,0 +1,32 @@
+providers = [ "node" ]
+
+[variables]
+# Pin Node version for consistent builds
+NIXPACKS_NODE_VERSION = "20"
+
+[phases.setup]
+# System/runtime packages needed for build (e.g., sharp)
+nixpkgs = [
+  "nodejs_20",
+  "pnpm",
+  "pkg-config",
+  "openssl",
+  "vips",
+  "python3"
+]
+
+[phases.install]
+cmds = [
+  # Install root deps and workspace deps
+  "pnpm install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  # Build only the docs app (Astro)
+  "pnpm -C docs build"
+]
+
+[start]
+# Serve the built site. Nixpacks will set PORT; default locally to 4321
+cmd = "pnpm -C docs preview --host 0.0.0.0 --port ${PORT:-4321}"

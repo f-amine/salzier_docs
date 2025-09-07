@@ -21,10 +21,12 @@ export default defineConfig({
         root: {
           lang: 'en',
           label: 'English',
+          dir: 'ltr',
         },
-        es: {
-          lang: 'es',
-          label: 'Español',
+        ar: {
+          lang: 'ar',
+          label: 'العربية',
+          dir: 'rtl',
         },
       },
       components: {
@@ -43,7 +45,7 @@ export default defineConfig({
           labelClass: 'lt-md:hidden',
           iconClass: 'md:hidden',
           translations: {
-            es: 'Publicaciones',
+            ar: 'المدونة',
           },
         },
         {
@@ -52,6 +54,9 @@ export default defineConfig({
           icon: 'i-ri-lightbulb-line',
           labelClass: 'lt-md:hidden',
           iconClass: 'md:hidden',
+          translations: {
+            ar: 'التوثيق',
+          },
         },
       ],
       subNavBar: [
@@ -63,7 +68,7 @@ export default defineConfig({
           label: 'Talks',
           slug: 'talks',
           translations: {
-            es: 'Charlas',
+            ar: 'محاضرات',
           },
         },
         {

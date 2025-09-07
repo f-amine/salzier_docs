@@ -1,0 +1,17 @@
+{
+  "sponsor.thanks": "إذا كانت أعمالي مفيدة لك، ففكّر في دعمي للمساهمة في استدامة المصادر المفتوحة. شكرًا لك!",
+  "sponsor.to-suport": "ادعمني للمساعدة",
+
+  "toggleTheme.accessibleLabel": "تبديل وضع الألوان",
+  "languageSelect.accessibleLabel": "اختيار اللغة",
+  "i18n.untranslatedContent": "هذا المحتوى غير متوفر بلغتك بعد.",
+  "page.draft": "هذا المحتوى مسودة ولن يُضمّن في إصدارات الإنتاج.",
+  "404.text": "سعدنا بلقائك على أي حال!",
+  "builtWithVitesse.label": "بُني بواسطة فريق سالزير",
+  "comment.on": "علّق على",
+  "posts.empty": "{ لا يوجد شيء هنا بعد }",
+
+  "expressiveCode.copyButtonCopied": "تم النسخ!",
+  "expressiveCode.copyButtonTooltip": "نسخ إلى الحافظة",
+  "expressiveCode.terminalWindowFallbackTitle": "نافذة الطرفية"
+}

@@ -33,7 +33,7 @@ if (config.social?.mastodon) {
       <h1 class="mb-0 slide-enter-50">{frontmatter.display ?? frontmatter.title}</h1>
       {frontmatter.date && (
         <p class="opacity-50 slide-enter-50 !-mt-6">
-          {formatDate(frontmatter.date, false)} {frontmatter.duration && ` · ${frontmatter.duration}`}
+          {formatDate(frontmatter.date, false, Astro.props.lang)} {frontmatter.duration && ` · ${frontmatter.duration}`}
         </p>
       )}
       {frontmatter.place && (

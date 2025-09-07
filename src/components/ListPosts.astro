@@ -130,7 +130,7 @@ function getGroupName(p: InferEntrySchema<'pages'>) {
                   <span class="align-middle op50 flex-none i-ri:film-line" title="Provided in video" />
                 )}
                 {data.radio && <span class="align-middle op50 flex-none i-ri:radio-line" title="Provided in radio" />}
-                <span class="text-sm op50 ws-nowrap">{formatDate(data.date!, true)}</span>
+                <span class="text-sm op50 ws-nowrap">{formatDate(data.date!, true, localeData.lang)}</span>
                 {data.duration && <span class="text-sm op40 ws-nowrap"> · {data.duration}</span>}
                 {data.platform && <span class="text-sm op40 ws-nowrap"> · {data.platform}</span>}
                 {data.place && <span class="text-sm op40 ws-nowrap md:hidden"> · {data.place}</span>}
